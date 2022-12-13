@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Zen Dots";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/zendots/v10/XRXX3ICfm00IGoesQdaDRs7nczIH.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail {
+  font-family: "Zen Dots", cursive;
+  height: 95vh;
+  font-size: 2rem;
+}
+
+.about__datailPhoto {
+  /* border: 1px solid darkblue; */
+  flex: 2 0 0;
+}
+
+.about__datailName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+}
+
+.toName {
+  /* border: 1px solid darkblue; */
+  font-family: "Zen Dots", cursive;
+  flex: 1 0 0;
+  font-size: 2rem;
+}

@@ -1,0 +1,38 @@
+.TodoItem {
+  font-family: "SUIT-Regular";
+  font-weight: 700;
+  border: 2px solid black;
+  box-shadow: 5px 5px 1px 1px black;
+  /* padding: 1.5rem; */
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.content {
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.content svg {
+  font-size: 5rem;
+  padding: 20px;
+  border-right: 2px solid black;
+}
+
+.content .text {
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.content.checked .text {
+  color: white;
+}
+
+.content.checked {
+  color: white;
+  background-color: rgb(201, 43, 43);
+}
