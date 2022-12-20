@@ -18,22 +18,7 @@
     U+FEFF, U+FFFD;
 }
 
-.App {
-  text-align: center;
-}
-
-.sidebar {
-  display: flex;
-  background-color: black;
-  justify-content: space-around;
+div {
   align-items: center;
-  height: 60px;
-  position: sticky;
-  top: 0;
-}
-
-.bb {
-  font-family: "Zen Dots", cursive;
-  color: white;
-  font-size: 1.3rem;
+  text-align: center;
 }

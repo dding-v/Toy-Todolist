@@ -1,47 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef, ChangeEvent } from "react";
 import "./Todo.css";
 import Template from "./components/Template";
 import TodoList from "./components/TodoList";
 import { MdAddCircle } from "react-icons/md";
 import TodoInsert from "./components/Todoinsert";
 
-let nextId = 7;
-
 const Todo = () => {
-  const [selectedTodo, setSelectedTodo] = useState(null);
-  const [insertToggle, setInsertToggle] = useState(false);
+
+
+  const [selectedTodo, setSelectedTodo] = useState([null]); // 내용
+  const [insertToggle, setInsertToggle] = useState(false); // 토글
+  const [id, setId] = useState(0)
+  const isMount = useRef(true)
+  const [list, setList] = useState([])
+
+
   const [todos, setTodos] = useState([
     {
-      id: 1,
+      id: new Date().getTime(), 
       text: "유닛 블로깅 하기",
       checked: true,
     },
-    {
-      id: 2,
-      text: "복습 블로깅 하기",
-      checked: false,
-    },
-    {
-      id: 3,
-      text: "아침 스터디",
-      checked: true,
-    },
-    {
-      id: 4,
-      text: "알고리즘 풀기",
-      checked: true,
-    },
-    {
-      id: 5,
-      text: "크리스마스 준비하기",
-      checked: false,
-    },
-    {
-      id: 6,
-      text: "14일 마곡 캠퍼스",
-      checked: false,
-    },
   ]);
+
+  let nextId = todos.length;
 
   const onInsertToggle = () => {
     if (selectedTodo) {
@@ -55,7 +37,7 @@ const Todo = () => {
       return alert("할 일을 입력해 주세요.");
     } else {
       const todo = {
-        id: nextId,
+        id: new Date().getTime(),
         text,
         checked: false,
       };
@@ -64,6 +46,7 @@ const Todo = () => {
     }
   };
 
+  // 체크
   const onCheckToggle = (id) => {
     setTodos((todos) =>
       todos.map((todo) =>
@@ -72,21 +55,79 @@ const Todo = () => {
     );
   };
 
+  // 체크 상태 변경
   const onChangesetSelectedTodo = (todo) => {
     setSelectedTodo(todo);
   };
 
+  // 삭제
   const onRemove = (id) => {
     onInsertToggle();
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
   };
-
+  
+  // 수정
   const onUpdata = (id, text) => {
     onInsertToggle();
     setTodos((todos) =>
       todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
     );
   };
+
+  const onChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const newTodoTemp = {...todos, [e.target.name]: e.target.value}
+    setTodos(newTodoTemp) // input value가 바뀔 때마다 새로운 todo를 set 해 준다
+  }
+
+  const addList = () => {
+    if (todos.text) {
+      const newList = todos.concat(todos)
+      setList(newList)
+      localStorage.setItem('todos', JSON.stringify(newList))
+    }
+    setTodos({...todos, text: ""})
+  }
+
+  useEffect (() => {
+    const locallist = localStorage.getItem('todos')
+    if (locallist) setList(JSON.parse(locallist))
+  })
+
+
+
+
+  // useEffect(() => {
+  //   if(!isMount.current) {
+  //   localStorage.setItem('todos', JSON.stringify(todos))
+  //   localStorage.setItem('id', id)
+  //   }
+  // }, [todos, id])
+
+  // useEffect(() => {
+  //   const localTodoList = localStorage.getItem('todos')
+  //   console.log(localTodoList, JSON.parse(localTodoList))
+  //   if (localTodoList) {
+  //     setTodos(JSON.parse(localTodoList))
+  //   }
+  //   const localId = localStorage.getItem('id')
+  //   if (localId) {
+  //     setId(localId)
+  //   }
+  //   isMount.current = false
+  // }, [])
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <Template todoLength={todos.length}>

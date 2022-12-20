@@ -1,9 +1,30 @@
 .TodoItem {
   font-family: "SUIT-Regular";
   font-weight: 700;
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  border: 1px solid black;
+  margin: 15px auto;
+}
+
+.content {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.content svg {
+  font-size: 3.5rem;
+  padding: 0.9rem;
+}
+
+/*
+.TodoItem {
+  font-family: "SUIT-Regular";
+  font-weight: 700;
   border: 2px solid black;
   box-shadow: 5px 5px 1px 1px black;
-  /* padding: 1.5rem; */
   display: flex;
   align-items: center;
   margin: 20px;
@@ -36,3 +57,4 @@
   color: white;
   background-color: rgb(201, 43, 43);
 }
+*/

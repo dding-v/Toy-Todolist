@@ -1,20 +1,21 @@
 .Template {
   height: 100vh;
+  margin-top: 100px;
   align-items: center;
-  background-color: gray;
 }
 .title {
+
   font-family: "Zen Dots", cursive;
-  width: 100vw;
+  width: 400px;
   height: 60px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;  
+  border-radius: 1rem;
+  text-align: center;
 
   padding-top: 16px;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
-  background-color: darkgreen;
+  background-color: rgb(46, 32, 195);
   color: white;
-  border-bottom: 2px solid black;
 }
