@@ -1,23 +1,42 @@
 .TodoItem {
   font-family: "SUIT-Regular";
   font-weight: 700;
-  width: 400px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
-  border: 1px solid black;
-  margin: 15px auto;
+  width: 600px;
+  margin: 15px auto;  
 }
 
 .content {
   cursor: pointer;
   display: flex;
   align-items: center;
+  background-color: #fff;
+  border: 0.5px solid gainsboro;
+}
+.content svg {
+  font-size: 3rem;
+  padding: 0.9rem;
+  border-right: 0.5px solid gainsboro;
+  background-color: rgb(236, 230, 197);
+}
+.content .text {
+  margin-left: 1rem;
+  font-size: 0.8rem;
+}
+.content svg {
+  background-color: #fff;
 }
 
-.content svg {
-  font-size: 3.5rem;
-  padding: 0.9rem;
+
+.content.checked {
+  background-color: #f8f8f8;
+  border: 0.5px solid gainsboro;
 }
+.content.checked .text {
+}
+.content.checked svg {
+  background-color: rgb(244, 233, 176);
+}
+
 
 /*
 .TodoItem {

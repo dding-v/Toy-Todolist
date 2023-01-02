@@ -17,13 +17,38 @@ const Todo = () => {
 
   const [todos, setTodos] = useState([
     {
-      id: new Date().getTime(), 
+      id: 1, 
       text: "유닛 블로깅 하기",
+      checked: true,
+    },
+    {
+      id: 2, 
+      text: "저녁 요가 30분 하기",
+      checked: false,
+    },
+    {
+      id: 3, 
+      text: "코플릿 문제 복습하기",
+      checked: true,
+    },
+    {
+      id: 4, 
+      text: "노션 정리하기",
+      checked: true,
+    },
+    {
+      id: 5, 
+      text: "깃허브 링크 배포 하기",
+      checked: false,
+    },
+    {
+      id: 6, 
+      text: "자기 전에 일기 쓰기",
       checked: true,
     },
   ]);
 
-  let nextId = todos.length;
+  let nextId = todos.length + 1;
 
   const onInsertToggle = () => {
     if (selectedTodo) {
