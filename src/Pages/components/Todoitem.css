@@ -28,11 +28,10 @@
 
 
 .content.checked {
-  background-color: #f8f8f8;
+  background-color: #fbfaf3;
   border: 0.5px solid gainsboro;
 }
-.content.checked .text {
-}
+
 .content.checked svg {
   background-color: rgb(244, 233, 176);
 }

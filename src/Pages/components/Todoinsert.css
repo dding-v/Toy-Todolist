@@ -2,6 +2,7 @@
   position: fixed;
   z-index: 980;
   top: 0;
+  left: 0;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -14,6 +15,8 @@
 form {
   position: fixed;
   top: 40%;
+  left: 0;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,10 +32,9 @@ form > input {
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-
   width: 100vh;
   padding: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 

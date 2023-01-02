@@ -10,9 +10,9 @@ const Todo = () => {
 
   const [selectedTodo, setSelectedTodo] = useState([null]); // 내용
   const [insertToggle, setInsertToggle] = useState(false); // 토글
-  const [id, setId] = useState(0)
-  const isMount = useRef(true)
-  const [list, setList] = useState([])
+  // const [id, setId] = useState(0)
+  // const isMount = useRef(true)
+  // const [list, setList] = useState([])
 
 
   const [todos, setTodos] = useState([
@@ -99,24 +99,24 @@ const Todo = () => {
     );
   };
 
-  const onChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
-    const newTodoTemp = {...todos, [e.target.name]: e.target.value}
-    setTodos(newTodoTemp) // input value가 바뀔 때마다 새로운 todo를 set 해 준다
-  }
+  // const onChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
+  //   const newTodoTemp = {...todos, [e.target.name]: e.target.value}
+  //   setTodos(newTodoTemp) // input value가 바뀔 때마다 새로운 todo를 set 해 준다
+  // }
 
-  const addList = () => {
-    if (todos.text) {
-      const newList = todos.concat(todos)
-      setList(newList)
-      localStorage.setItem('todos', JSON.stringify(newList))
-    }
-    setTodos({...todos, text: ""})
-  }
+  // const addList = () => {
+  //   if (todos.text) {
+  //     const newList = todos.concat(todos)
+  //     setList(newList)
+  //     localStorage.setItem('todos', JSON.stringify(newList))
+  //   }
+  //   setTodos({...todos, text: ""})
+  // }
 
-  useEffect (() => {
-    const locallist = localStorage.getItem('todos')
-    if (locallist) setList(JSON.parse(locallist))
-  })
+  // useEffect (() => {
+  //   const locallist = localStorage.getItem('todos')
+  //   if (locallist) setList(JSON.parse(locallist))
+  // })
 
 
 
